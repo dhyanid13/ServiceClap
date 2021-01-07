@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Service Clap</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<style>
+    body{
+        background-image: linear-gradient(#45ccb8,black);
+    }
+h2{
+font-size:80px;
+font-style:italic;
+font-weight:bold;
+}
+
+:root{
+--light-gray:#2b3032a1;
+--primary-color:#45ccb8;
+--border:#2b303218;
+--text-color:#ff686b;
+--roboto:"Roboto&family",sans-serif;
+--gugi:"Gugi&family",cursive;
+--sofia:"Sofia&display",cursive;
+--anton:"Anton&family",sans-serif;
+}
+    
+.primary-color{
+color:var(--primary-color);
+}
+.bg-primary-color{
+background-color:var(--primary-color)!important;
+}
+.text-color{
+color:var(--text-color);
+}
+.font-roboto{
+font-family:var(--roboto);
+}
+.lightblue{
+color:lightblue;
+}
+header{
+background-color:var(--primary-color);
+font-family:var(--roboto);
+}
+header .site-title{
+font-family:var(--anton);
+color:black;
+}
+.container .dropdown-toggle,
+.container .dropdowm-item{
+font-size:0.7em;
+}
+
+.header-links a{
+font-size:0.9em;
+text-decoration:none;
+color:white;
+
+}
+html, body {
+ height: 100%;
+}
+
+.wrap {
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(./images/blacky.jpg);
+}
+
+.button {
+ min-width: 300px;
+ min-height: 60px;
+ font-family: 'Nunito', sans-serif;
+ font-size: 22px;
+ text-transform: uppercase;
+ letter-spacing: 1.3px;
+ font-weight: 700;
+ color: #313133;
+ background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+ border: none;
+ border-radius: 1000px;
+ box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+ transition: all 0.3s ease-in-out 0s;
+ cursor: pointer;
+ outline: none;
+ 
+ position: relative;
+ padding: 10px;
+ }
+ 
+
+button::before {
+content: '';
+ border-radius: 1000px;
+ min-width: calc(300px + 12px);
+ min-height: calc(60px + 12px);
+ border: 6px solid #00FFCB;
+ box-shadow: 0 0 60px rgba(0,255,203,.64);
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ 
+ transform: translate(-50%, -50%);
+ opacity: 0;
+ transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+ color: #313133;
+ transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+ opacity: 1;
+}
+
+button::after {
+ content: '';
+ width: 30px; height: 30px;
+ border-radius: 100%;
+ border: 6px solid #00FFCB;
+ position: absolute;
+ z-index: -1;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+ animation: none;
+ display: none;
+}
+
+@keyframes ring {
+ 0% {
+width: 30px;
+height: 30px;
+opacity: 1;
+ }
+ 100% {
+width: 300px;
+height: 300px;
+opacity: 0;
+ }
+}
+
+
+/*---------------About------------*/
+#about
+{
+padding-top:50px;
+padding-bottom:50px;
+color:#555;
+}
+#about .btn
+{
+margin-top:20px;
+margin-bottom:30px;
+}
+.about-content{
+
+padding:20px;
+
+}
+/*------------Services-----------*/
+#services{
+background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(./images/blacky.jpg);
+background-size: cover;
+background-position: center;
+color: #efefef!important;
+background-attachment: fixed;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+#services h1
+{
+text-align:center;
+color:#efefef !important;
+padding-bottom: 10px;
+}
+#services h1::after
+{
+content:'';
+background:#efefef;
+display:block;
+height:3px;
+width: 170px;
+margin: 20px auto 5px;
+
+}
+.services{
+margin-top:40px;
+}
+.icon{
+font-size: 40px;
+margin: 20px auto;
+padding:20px;
+height:80px;
+width:80px;
+border:1px solid #fff;
+border-radius:50%;
+}
+#services p{
+font-size:14px;
+margin-top:20px;
+color:#ccc;
+
+
+}
+.services .col-md-3:hover{
+background:#007bff;
+cursor:pointer;
+transition:0.7s;
+}
+/*-------Team Members-------*/
+#team{
+padding-top:50px;
+padding-bottom:50px;
+color:#555;
+}
+h1{
+text-align:center;
+color:#555!important;
+padding-bottom:10px;
+}
+h1::after{
+content:'';
+background:#007bff;
+display:block;
+height:3px;
+width:170px;
+margin:20px auto 5px;
+
+}
+.profile-pic
+{
+margin-top:25px;
+
+}
+.profile-pic .img-box{
+opacity:1;
+display:block;
+position:relative;
+}
+.profile-pic .img-box img{
+filter:grayscale(1);
+
+
+}
+.profile-pic .img-box img:hover{
+filter:grayscale(0);
+cursor:pointer;
+
+
+}
+.profile-pic h2{
+font-size:22px;
+font-weight:bold;
+margin-top:15px;
+color:#007bff!important;
+}
+.profile-pic h3{
+font-size:15px;
+font-weight:bold;
+margin-top:15px;
+
+}
+#team{
+background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(./images/blacky.jpg);;
+}
+#team .fa{
+height:25px;
+width:25px;
+color: #007bff!important;
+background:#fff;
+padding:4px;
+border-radius:50%;
+
+}
+.img-box{
+background-color:#45ccb8;
+}
+.img-box ul{
+padding:15px 0;
+position:absolute;
+z-index:2;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+opacity:0;
+
+
+
+}
+.img-box ul li{
+padding:5px;
+display:inline-block;
+
+
+
+}
+.img-box:hover ul{
+
+opacity:1;
+
+
+}
+.img-box ul,.img-box ul li{
+
+transition:0.5s;
+
+
+}
+/*-------Promo----------*/
+#promo
+{
+background-color:#45ccb8;
+background-size:cover;
+background-position:center;
+color:#fff;
+background-attachment:fixed;
+text-align:center;
+padding:100px;
+font-family:sans-serif;
+font-size:38px;
+
+}
+#promo a{
+color:black;
+}
+#promo p{
+color:black;
+}
+/*---------Price Plan----------*/
+#price
+{
+padding:40px 0 ;
+background-color: black;
+}
+.single-price{
+margin: 10px auto;
+display:inline;
+float:left;
+width:100%;
+background-color:#fff;
+transition:0.5s;
+
+}
+.single-price:hover{
+box-shadow:0 2px 20px #333;
+
+}
+.price-head
+{
+background-color:#2196f3;
+display:inline;
+float:left;
+padding:10px 5px;
+text-align:center;
+width:100%;
+
+
+}
+.price-head h2{
+color:#fff;
+font-size:30px;
+font-weight:bold;
+margin-bottom: 5px;
+padding:5px;
+text-transform:uppercase;
+
+
+
+}
+.price-head p{
+font-size:25px;
+color:#ccc;
+font-weight:bold;
+line-height:30px;
+
+}
+#price span{
+font-size:15px;
+}
+.price-content{
+display:inline;
+float:left;
+width:100%;
+padding:0 15px;
+}
+.price-content ul li{
+border-bottom:1 px solid #efefef;
+padding:15px 10px;
+list-style:none;
+}
+ul li:last-child{
+border:none;
+}
+.price-button{
+
+display:inline;
+float:left;
+padding:15px 15px 30px;
+text-align:center;
+width:100%;
+}
+.buy-btn{
+background-color: #2196;
+border-radius:3px;
+display:inline-block;
+font-size:18px;
+padding:15px 50px;
+transtion:0.5s;
+
+}
+.buy-btn:hover{
+border-color:1px solid #fff;
+background-color:#3f51b5;
+
+
+}
+a{
+text-decoration:none!important;
+color:#fff!important;
+
+
+}
+Resources
+#slider{
+width:900px;
+border:1px;
+}
+#slider1{
+width:900px;
+border:1px;
+margin-top:10px;
+
+}
+
+.navbar-nav{
+padding:0.8em 0em ;
+}
+.navbar-nav .nav-link{
+font-size:0.9em;
+color:var(--light-gray)!important;
+}
+.navbar-nav .nav-item .nav-link{
+padding:0 1.3em ;
+}
+#bb{
+background-color: #bfd9d7;
+ width: 450px;
+ height:650px;
+ border: 15px solid black;
+ padding: 50px;
+ margin-right: 0px;
+ float:right;
+
+
+
+}
+
+
+#logo{
+width:500px;
+margin-left: 500px;
+height: 150px;
+
+
+
+}
+#cc1{
+background-color: black;
+
+}
+
+</style>
+</head>
+<body>
+<header id="cc1">
+<img id="logo" src="./images/logo.png">
+<div class="container-fluid p-0">
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-white">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+ 
+ 
+ 
+ 
+</nav>
+
+</div>
+</header>
+<main>
+<div id="bb">
+<h4>What is ServiceClap?</h4>
+<br>
+ <h5>
+ ServiceClap Business Model is a startup with the basic idea that someone sitting at home can hire help for a varied range of jobs. The company is a community of professionals providing their services to whomever it may concern. The business model of UrbanClap is a way to change how members of the armed forces get employment which is paid quickly.
+ </h5>
+ <br>
+ <h5>It is designed by:</h5>
+ <br>
+ <h5>Desai Dhyani Dhaval</h5>
+ <br>
+ <h5>Karmanya Tyagi</h5>
+</div>
+<div id="slider1">
+
+
+<div id="headerSlider" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
+    <li data-target="#headerSlider" data-slide-to="1"></li>
+    <li data-target="#headerSlider" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/cool1.jfif" class="d-block img-fluid">
+ <div class="carousel-caption">
+<h5></h5>
+ </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./images/cool2.jpg" class="d-block img-fluid">
+ <div class="carousel-caption">
+<h5></h5>
+ </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./images/cool3.jpg" class="d-block img-fluid">
+ <div class="carousel-caption">
+<h5></h5>
+ </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#headerSlider" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#headerSlider" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div id="slider">
+<div id="headerSlider" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
+    <li data-target="#headerSlider" data-slide-to="1"></li>
+    <li data-target="#headerSlider" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/cool4.jpg" class="d-block img-fluid">
+ <div class="carousel-caption">
+<h5></h5>
+ </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./images/cool5.jpg" class="d-block img-fluid">
+ <div class="carousel-caption">
+<h5></h5>
+ </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./images/cool6.jfif" class="d-block img-fluid">
+ <div class="carousel-caption">
+<h5></h5>
+ </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#headerSlider" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#headerSlider" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+</main>
+
+
+
+<footer>
+<!----------------About------------>
+<section id="about">
+<div class="container">
+<div class="row">
+
+</section>
+<!-------------Services------------->
+<section id="services">
+<div class="container">
+<h1>Our Services</h1>
+<div class="row services">
+<div class="col-md-3 text center">
+<div class="icon">
+<i class="fa fa-ambulance"></i>
+</div>
+<h3>Medical Facilities</h3>
+
+</div>
+<div class="col-md-3 text center">
+<div class="icon">
+<i class="fa fa-thumbs-up"></i>
+</div>
+<h3>Repair Services</h3>
+
+</div>
+<div class="col-md-3 text center">
+<div class="icon">
+<i class="fa fa-line-chart"></i>
+</div>
+<h3>Grocery Order</h3>
+
+</div>
+<div class="col-md-3 text center">
+<div class="icon">
+<i class="fa fa-bath"></i>
+</div>
+<h3>Salon & Spa</h3>
+
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="wrap">
+  <a href="http://localhost/cms/"><button class="button">Dive In</button></a>
+</div>
+
+<!------Team Members------>
+<section id="team">
+<div class="container"></div>
+<h1>Our Team</h1>
+<div class="row">
+<div class="col-md-3 profile-pic text-center">
+<div class="img-box">
+
+<ul>
+<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+<a href="#"><li><i class="fa fa-twitter"></i></li></a>
+<a href="https://www.linkedin.com/in/dhyani-desai-2706021b4/"><li><i class="fa fa-linkedin"></i></li></a>
+</ul>
+</div>
+<h2>Dhyani Desai</h2>
+<h3>Founder/CEO</h3>
+<p>
+Email:dhyanid13@gmail.com
+Contact Number:8160266610
+
+</p>
+</div>
+<div class="col-md-3 profile-pic text-center">
+<div class="img-box">
+
+<ul>
+<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+<a href="#"><li><i class="fa fa-twitter"></i></li></a>
+<a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+</ul>
+</div>
+<h2>Karmanya Tyagi</h2>
+<h3>Founder/CEO</h3>
+<p>
+Email:karmanya100@gmail.com
+Contact Number:9654839168
+
+</p>
+</div>
+
+
+</section>
+<!-------------promo--------------->
+<section id="promo">
+<div class="container">
+<p>We are here to serve you in this pandemic</p>
+<a>Call Our Helpline Number:1800-264734483</a>
+</div>
+</section>
+<!------Price Plans--------->
+<section id="price">
+<div class="container">
+<h1>Extra Info</h1>
+<div class="row">
+<div class="col-md-3"></div>
+
+<div class="single-price">
+<div class="price-head">
+<h2>
+Free for 1st 3 SERVICES.
+</h2>
+
+</div>
+<div class="price-content">
+<ul>
+<li><i class="fa-fa-check-circle"></i>
+
+</li>
+<li><i class="fa-fa-check-circle"></i>
+50Rs Delivery Charge.
+</li>
+<li><i class="fa-fa-check-circle"></i>
+All Taxes Included.
+</li>
+<li><i class="fa-fa-times-circle"></i>
+24X7 Services.
+</li>
+<li><i class="fa-fa-times-circle"></i>
+Now Operating Worldwide
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div/>
+</section>
+
+</footer>
+
+
+
+
+
+
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
